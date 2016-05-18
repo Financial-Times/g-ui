@@ -1,0 +1,13 @@
+{
+  "name": "ig-article",
+  "main": ["main.scss"],
+  "ignore": [
+    ".travis.yml",
+    "circle.yml"
+  ],
+  "dependencies": {
+    "o-typography": "^4",
+    "o-grid": "^4",
+    "o-share": "^2"
+  }
+}
