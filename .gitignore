@@ -13,3 +13,4 @@ bower_components
 node_modules
 build
 demos/local
+.bowerrc

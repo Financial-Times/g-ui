@@ -1,3 +1,9 @@
-.g-section-body {
-
+.section-body.body {
+  & > *:not(.block) {
+    max-width: $line-length;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: $hspace;
+    padding-right: $hspace /*0.75em*/;
+  }
 }

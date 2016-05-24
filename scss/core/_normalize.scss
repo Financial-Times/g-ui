@@ -1,3 +1,5 @@
+// scss-lint:disable all
+
 $_ig-normalize_applied: false !default;
 
 @if $_ig-normalize_applied == false {
@@ -19,6 +21,39 @@ $_ig-normalize_applied: false !default;
 		margin: 0;
 		border: 0;
 	}
+
+		/**
+	 * Add the correct display in IE 9-.
+	 * 1. Add the correct display in Edge, IE, and Firefox.
+	 * 2. Add the correct display in IE.
+	 */
+
+	article,
+	aside,
+	details, /* 1 */
+	figcaption,
+	figure,
+	footer,
+	header,
+	main, /* 2 */
+	menu,
+	nav,
+	section,
+	summary { /* 1 */
+	  display: block;
+	}
+
+	/**
+	 * Add the correct display in IE 9-.
+	 */
+
+	audio,
+	canvas,
+	progress,
+	video {
+	  display: inline-block;
+	}
+
 
 	/* Links
 	   ===================================================================== */
@@ -207,6 +242,14 @@ $_ig-normalize_applied: false !default;
 	}
 
 	/**
+	 * Remove UA preference for figure margin
+	 */
+
+	figure {
+		margin: unset;
+	}
+
+	/**
 	 * Give <main>s the proper display value in IE.
 	 */
 
@@ -231,3 +274,5 @@ $_ig-normalize_applied: false !default;
 } @else {
 	@warn "ig-article/normalize should only be imported once.";
 }
+
+// scss-lint:enable all

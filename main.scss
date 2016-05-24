@@ -1,21 +1,23 @@
-@import 'o-colors/main';
+$ig-article-is-silent: true !default;
 
-@import "scss/variables";
-@import "scss/origami-overrides/variables";
+@import "o-colors/main";
 
-@import "scss/normalize";
+@import "scss/core/normalize";
+@import "scss/core/units";
+@import "scss/core/colors";
 
-@import 'o-grid/main';
-@import 'o-typography/main';
-@import 'o-share/main';
+@import "o-grid/main";
 
-@import "scss/origami-overrides/o-typography";
-@import "scss/origami-overrides/o-share";
+@import "scss/typography/main";
+@import "scss/share/main";
 
-// Don't depend on o-header, use the build service.
+@import "scss/block";
+@import "scss/section/main";
+@import "scss/viz/main";
+@import "scss/griddle/main";
+
+// Don't depend on o-header or o-footer, use the build service.
 @import "scss/origami-overrides/o-header";
+@import "scss/origami-overrides/o-footer";
 
-@import "scss/page";
-@import "scss/section/head";
-@import "scss/section/body";
-@import "scss/figure";
+@import "scss/core/page";
