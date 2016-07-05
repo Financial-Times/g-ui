@@ -6,6 +6,7 @@
 	"supportStatus": "experimental",
 	"demosDefaults": {
 		"sass": "demos/src/demo.scss",
+		"js": ["js/demo.js"],
 		"dependencies": ["o-fonts@^2", "o-grid@^4"]
 	},
 	"ci": {
@@ -14,9 +15,10 @@
 	"demos": [
 		{
 			"name": "article",
-			"template": "demos/src/index.html",
+			"template": "demos/src/index.mustache",
 			"expanded": true,
-			"description": ""
+			"description": "",
+			"js": "/js/demo.js"
 		}
   ]
 }
