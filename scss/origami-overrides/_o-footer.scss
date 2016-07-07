@@ -1,1 +1,20 @@
 // nothing to override
+.is-falcon {
+  .o-footer--variant-next {
+    display: none;
+  }
+
+  .o-footer--variant-falcon {
+    display: initial;
+  }
+}
+
+.is-next {
+  .o-footer--variant-falcon {
+    display: none;
+  }
+
+  .o-footer--variant-next {
+    display: inital;
+  }
+}

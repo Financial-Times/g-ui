@@ -1,6 +1,9 @@
 {
   "name": "ig-article",
-  "main": ["main.js", "main.scss"],
+  "main": [
+    "main.js",
+    "main.scss"
+  ],
   "ignore": [
     ".travis.yml",
     "circle.yml"
