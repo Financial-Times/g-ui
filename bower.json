@@ -1,6 +1,9 @@
 {
   "name": "ig-article",
-  "main": ["main.js", "main.scss"],
+  "main": [
+    "main.js",
+    "main.scss"
+  ],
   "ignore": [
     ".travis.yml",
     "circle.yml"
@@ -9,6 +12,10 @@
     "o-typography": "^4",
     "o-date": "^2.3.3",
     "o-grid": "^4",
-    "o-share": "^2"
+    "o-share": "^2",
+    "o-card": "Financial-Times/o-card#^2.1.4"
+  },
+  "resolutions": {
+    "o-typography": "^4"
   }
 }
