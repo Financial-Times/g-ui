@@ -16,11 +16,12 @@ $ig-article-is-silent: true !default;
 @import "scss/section/main";
 @import "scss/viz/main";
 @import "scss/griddle/main";
+@import "scss/onward-journey/onward-journey";
 
-// Don't depend on o-header or o-footer, use the build service.
+// Don't depend on o-header, o-footer or o-card; use the build service.
 @import "scss/origami-overrides/o-header";
 @import "scss/origami-overrides/o-footer";
+@import "scss/origami-overrides/o-card";
 
 @import "scss/core/page";
-
 }

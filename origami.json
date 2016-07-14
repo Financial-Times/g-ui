@@ -6,7 +6,9 @@
 	"supportStatus": "experimental",
 	"demosDefaults": {
 		"sass": "demos/src/demo.scss",
-		"dependencies": ["o-fonts@^2", "o-grid@^4"]
+		"dependencies": ["o-fonts@^2", "o-grid@^4", "o-card@^2"],
+		"js": "demos/src/main.js",
+		"documentClasses": "core"
 	},
 	"ci": {
 		"circle": "https://circleci.com/api/v1/project/Financial-Times/ig-article"
@@ -14,9 +16,10 @@
 	"demos": [
 		{
 			"name": "article",
-			"template": "demos/src/index.html",
+			"template": "demos/src/index.mustache",
 			"expanded": true,
-			"description": ""
+			"description": "",
+			"js": "demos/src/article.js"
 		}
   ]
 }
