@@ -8,6 +8,9 @@ $o-grid-is-silent: false;
   margin-top: 10px;
   overflow: hidden;
   margin-left: 0;
+  &.header--standout {
+    margin-bottom: 10px;
+  }
 }
 .header__title:after {
   display: initial;
