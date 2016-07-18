@@ -80,6 +80,11 @@ $o-grid-is-silent: false;
   display: inline-block;
 }
 
+.o-card__standfirst--small {
+  margin-top: 0.5em;
+  font: 14px/1.3 'Georgia', sans-serif;
+}
+
 @include oGridRespondTo($from:S) {
   .header__link {
     display: inline-block;
@@ -87,9 +92,6 @@ $o-grid-is-silent: false;
 }
 
 @include oGridRespondTo($from:M) {
-  .header {
-    margin-left: -20px;
-  }
   .header__link {
     display: inline-block;
   }
