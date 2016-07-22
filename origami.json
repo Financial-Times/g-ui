@@ -20,6 +20,12 @@
 			"expanded": true,
 			"description": "",
 			"js": "demos/src/article.js"
+		},
+		{
+			"name": "onwardjourney",
+			"template": "demos/src/onwardjourney.mustache",
+			"expanded": true,
+			"description": ""
 		}
   ]
 }
