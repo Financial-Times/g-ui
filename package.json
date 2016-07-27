@@ -1,0 +1,36 @@
+{
+  "name": "ig-article",
+  "version": "1.1.0-alpha.3",
+  "description": "Styles for IG article pages. This pulls in Origami modules and templates together. Inspired by [n-ui](https://github.com/Financial-Times/n-ui).",
+  "main": "templates/index.js",
+  "dependencies": {
+    "babel-preset-es2015-node6": "^0.2.0",
+    "babel-preset-stage-2": "^6.11.0",
+    "nunjucks": "^2.4.2",
+    "chokidar": "^1.6.0",
+    "markdown-it": "^7.0.0",
+    "nunjucks-markdown": "^2.0.0",
+    "remove-markdown": "^0.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aendrew/ig-article.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aendrew/ig-article/issues"
+  },
+  "homepage": "https://github.com/aendrew/ig-article#readme",
+  "babel": {
+    "presets": [
+      "es2015-node6",
+      "stage-2"
+    ]
+  }
+}
