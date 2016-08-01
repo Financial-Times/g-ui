@@ -2,6 +2,7 @@
 	"description": "IG web page styles",
 	"origamiType": "module",
 	"origamiGroup": "component",
+	"origamiCategory": "components",
 	"origamiVersion": 1,
 	"support": "https://github.com/Financial-Times/ig-article/issues",
 	"supportStatus": "experimental",
