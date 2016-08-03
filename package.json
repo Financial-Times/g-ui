@@ -1,7 +1,7 @@
 {
-  "name": "ig-article",
+  "name": "g-ui",
   "version": "1.2.0-alpha.1",
-  "description": "Styles for IG article pages. This pulls in Origami modules and templates together. Inspired by [n-ui](https://github.com/Financial-Times/n-ui).",
+  "description": "Styles for Graphics (IG) web pages. Inspired by [n-ui](https://github.com/Financial-Times/n-ui).",
   "main": "lib/index.js",
   "dependencies": {
     "nunjucks": "^2.4.2",
@@ -25,13 +25,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aendrew/ig-article.git"
+    "url": "git+https://github.com/financial-times/g-ui.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/aendrew/ig-article/issues"
+    "url": "https://github.com/financial-times/g-ui/issues"
   },
-  "homepage": "https://github.com/aendrew/ig-article#readme"
+  "homepage": "https://github.com/financial-times/g-ui/ig-article#readme"
 }
