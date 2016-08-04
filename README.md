@@ -1,4 +1,4 @@
-# ig-article [![CircleCI](https://circleci.com/gh/Financial-Times/ig-article.svg?style=svg)](https://circleci.com/gh/Financial-Times/ig-article)
+# g-ui [![CircleCI](https://circleci.com/gh/Financial-Times/g-ui.svg?style=svg)](https://circleci.com/gh/Financial-Times/g-ui)
 
 > Styles for IG article pages. This pulls in Origami modules and templates together. Inspired by [n-ui](https://github.com/Financial-Times/n-ui).
 

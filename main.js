@@ -1,10 +1,10 @@
-import igArticle from './js/index';
+import gUI from './js/index';
 
 const constructAll = () => {
-	igArticle.init();
-	document.removeEventListener('o.DOMContentLoaded', constructAll);
+  gUI.init();
+  document.removeEventListener('o.DOMContentLoaded', constructAll);
 };
 
 document.addEventListener('o.DOMContentLoaded', constructAll);
 
-export default igArticle;
+export default gUI;

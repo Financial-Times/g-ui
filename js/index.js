@@ -1,10 +1,10 @@
-export default function igArticle(){};
+export default function gUI(){};
 
-igArticle.init = function() {
+gUI.init = function() {
   this.mountOnwardJourneyTags();
 };
 
-igArticle.mountOnwardJourneyTags = function() {
+gUI.mountOnwardJourneyTags = function() {
   let ojTags = document.querySelectorAll('onward-journey');
   [...ojTags].forEach((tag) => {
     if (!tag.classList.contains('is-rendered')) {

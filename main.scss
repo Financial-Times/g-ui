@@ -1,6 +1,6 @@
-$ig-article-is-silent: true !default;
+$g-ui-is-silent: true !default;
 
-@if not $ig-article-is-silent {
+@if not $g-ui-is-silent {
 @import "o-colors/main";
 
 @import "scss/core/normalize";
