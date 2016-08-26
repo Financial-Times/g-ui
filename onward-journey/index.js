@@ -1,23 +1,37 @@
-export default function mount() {
-  let ojTags = document.querySelectorAll('onward-journey');
-  [...ojTags].forEach((tag) => {
-    if (!tag.classList.contains('is-rendered')) {
-      let uuid = tag.dataset.uuid;
-      let layout = tag.dataset.layout || 'default';
-      let limit = tag.dataset.count || 6;
-      let urlBase = 'https://ft-ig-onwardjourney.herokuapp.com';
-      let url = `${urlBase}/list/${uuid}?layout=${layout}&limit=${limit}&type=html`;
-      if (uuid) {
-        fetch(url)
-        .then((res) => res.text())
-        .then((html) => {
-          tag.innerHTML = html;
-        });
-      } else {
-        throw new Error('No UUID specified; onward journey ignored.');
-      }
-    }
+export const elementSelector = '[data-g-component="onward-journey"]';
 
-    tag.classList.add('is-rendered');
-  });
+export const serviceBaseUrl = 'https://ft-ig-onwardjourney-pr-15.herokuapp.com/v1/';
+
+export const fetchList = (list, layout, limit) =>
+            fetch(`${serviceBaseUrl}${list}/html/${layout}?limit=${limit}`)
+              .then(res => {
+                if (res.status >= 200 && res.status < 300) {
+                  return res
+                } else {
+                  const error = new Error(res.statusText)
+                  error.res = response
+                  throw error
+                }
+              })
+              .then(res => res.text());
+
+export function renderIntoElement(element) {
+  if (element.classList.contains('is-rendered')) return;
+  const list = element.getAttribute('data-list') || 'list/graphics';
+  const layout = element.getAttribute('data-layout') || '';
+  const limit = parseInt(element.getAttribute('data-rows') || '1') * 4;
+  fetchList(list, layout, limit)
+    .then(html => {
+      element.innerHTML = html;
+      element.classList.add('is-rendered');
+    })
+    .catch(() => {
+      element.remove();
+    });
+}
+
+export default function init({delay = 800} = {}) {
+  setTimeout(() => {
+    [...document.querySelectorAll(elementSelector)].forEach(renderIntoElement);
+  }, delay);
 }

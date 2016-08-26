@@ -12,6 +12,7 @@
   }
 }
 
+$o-typography-is-silent: false;
 @import "o-typography/main";
 @import "../origami-overrides/o-typography";
 @import "head";

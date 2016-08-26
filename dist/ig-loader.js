@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * IGLoader
  * Loads templates of path format `g-ui/something` from
@@ -11,9 +13,7 @@ const { existsSync, readFileSync, realpathSync } = require('fs');
 
 /* eslint-disable no-console */
 
-const defaultSearchPaths = [
-  'node_modules/g-ui/',
-];
+const defaultSearchPaths = ['node_modules/g-ui/'];
 
 module.exports = nunjucks.Loader.extend({
   init(searchPaths = defaultSearchPaths, opts = {}) {
@@ -22,8 +22,7 @@ module.exports = nunjucks.Loader.extend({
 
     if (searchPaths) {
       // For windows, convert to forward slashes
-      this.searchPaths = (Array.isArray(searchPaths) ? searchPaths : [searchPaths])
-        .map(path.normalize);
+      this.searchPaths = (Array.isArray(searchPaths) ? searchPaths : [searchPaths]).map(path.normalize);
     } else {
       this.searchPaths = ['.'];
     }
@@ -39,8 +38,8 @@ module.exports = nunjucks.Loader.extend({
           this.emit('update', this.pathsToNames[fullnamePath]);
         }
       });
-      watcher.on('error', (error) => {
-        console.log(`Watcher error: ${error}`);
+      watcher.on('error', error => {
+        console.log(`Watcher error: ${ error }`);
       });
     }
   },
@@ -62,14 +61,14 @@ module.exports = nunjucks.Loader.extend({
         // Only allow the current directory and anything
         // underneath it to be searched
         const startsWith = p.indexOf(basePath) === 0;
-        if (startsWith && existsSync(`${p}/template.html`)) {
-          fullpath = `${p}/template.html`;
+        if (startsWith && existsSync(`${ p }/template.html`)) {
+          fullpath = `${ p }/template.html`;
           break;
-        } else if (startsWith && existsSync(`${p}.html`)) {
-          fullpath = `${p}.html`;
+        } else if (startsWith && existsSync(`${ p }.html`)) {
+          fullpath = `${ p }.html`;
           break;
-        } else if (startsWith && existsSync(`${p}/${suffix}.html`)) {
-          fullpath = `${p}/${suffix}.html`;
+        } else if (startsWith && existsSync(`${ p }/${ suffix }.html`)) {
+          fullpath = `${ p }/${ suffix }.html`;
           break;
         }
       }
@@ -84,10 +83,10 @@ module.exports = nunjucks.Loader.extend({
       return {
         src: source,
         path: fullpath,
-        noCache: this.noCache,
+        noCache: this.noCache
       };
     }
 
     return null;
-  },
+  }
 });

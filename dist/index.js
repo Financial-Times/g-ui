@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Main template loader
  */
@@ -8,13 +10,10 @@ const { FileSystemLoader, Environment } = require('nunjucks');
 const markdownTag = require('nunjucks-markdown');
 
 const templates = {
-  configure(paths, {filters={}, globals={}}) {
+  configure(paths, { filters = {}, globals = {} }) {
     delete require.cache[require.resolve('./filters/index')];
 
-    const env = new Environment([
-      new IGLoader(this.igArticlePaths),
-      new FileSystemLoader(paths),
-    ]);
+    const env = new Environment([new IGLoader(this.igArticlePaths), new FileSystemLoader(paths)]);
 
     Object.assign(env.filters, require('./filters'), filters);
 
@@ -26,7 +25,7 @@ const templates = {
 
     env.globals.ctx = function ctx(property, outputJSON) {
       const value = typeof property === 'string' ? this.ctx[property] : this.ctx;
-      const stringify = outputJSON || (typeof property === 'boolean' && property);
+      const stringify = outputJSON || typeof property === 'boolean' && property;
       return stringify ? env.filters.json(value) : value;
     };
 
@@ -35,9 +34,7 @@ const templates = {
     return env;
   },
 
-  igArticlePaths: [
-    'node_modules/g-ui/',
-  ],
+  igArticlePaths: ['node_modules/g-ui/']
 };
 
 module.exports.templates = templates;

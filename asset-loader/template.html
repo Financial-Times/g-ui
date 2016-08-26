@@ -1,0 +1,24 @@
+{% macro ResourceHints() %}
+<link rel="preconnect" href="https://origami-build.ft.com">
+<link rel="preconnect" href="https://build.origami.ft.com" crossorigin>
+<link rel="preconnect" href="https://cdn.polyfill.io">
+{% endmacro %}
+
+{% macro Stylesheets(urls) -%}
+{%- if urls %}{%- for url in urls %}
+<link rel="stylesheet" href="{{ url }}">
+{%- endfor -%}{%- endif -%}
+{%- endmacro %}
+
+{% macro oErrors(sentryEndpoint, on=false) %}
+{%- if on -%}
+<script type="application/json" data-o-errors-config>
+{"sentryEndpoint": "{ sentryEndpoint | default("https://ddbd80489ff549538250bbe37fa52bbd@app.getsentry.com/71130", true) }}"}
+</script>
+<script async src="https://origami-build.ft.com/v2/bundles/js?export=oErrors&modules=o-errors@^3.4.0"></script>
+{% endif %}
+{% endmacro %}
+
+{% macro ClientsideFlags(flags) %}
+{{ flags | inlineScriptElement('flags') }}
+{% endmacro %}

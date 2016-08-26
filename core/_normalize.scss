@@ -1,8 +1,8 @@
 // scss-lint:disable all
 
-$_ig-normalize_applied: false !default;
+$_g-normalize_applied: false !default;
 
-@if $_ig-normalize_applied == false {
+@if $_g-normalize_applied == false {
 
 	/**
 	 * Prevent adjustments of font size after orientation changes in IE and iOS.
@@ -272,7 +272,7 @@ $_ig-normalize_applied: false !default;
 	$_ig-normalize_applied: true;
 
 } @else {
-	@warn "ig-article/normalize should only be imported once.";
+	@warn "g-ui/normalize should only be imported once.";
 }
 
 // scss-lint:enable all

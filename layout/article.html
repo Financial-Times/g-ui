@@ -1,0 +1,46 @@
+{% extends "g-ui/layout" %}
+
+{%- import "g-ui/onward-journey" as OnwardJourney -%}
+{%- import "g-ui/comments" as Comments -%}
+{%- import "g-ui/article" as Article -%}
+
+{% block body %}
+  <main role="main">
+
+    {% call Article.Container() -%}
+
+      {% call Article.Header() -%}
+        {% block article_head %}
+
+        {% if flags.shareButtons %}
+          <div class="section-head__share">
+            {% include "g-ui/share" %}
+          </div>
+        {% endif %}
+
+        {{ Article.TitleBlock(title=headline, lead=summary, byline=byline, date=publishedDate, tag=topic, relatedArticle=relatedArticle) }}
+
+        {% endblock %}
+      {%- endcall %}
+
+      {% call Article.Body() %}
+        {% block article_body %}{% endblock %}
+      {% endcall %}
+
+      {% call Article.Footer() %}
+        {% block article_footer %}{% endblock %}
+      {% endcall %}
+
+    {% endcall %}
+
+  </main>
+
+  {% if flags.onwardJourney %}
+    {{ OnwardJourney.RelatedContent(onwardJourney.relatedContent) }}
+  {% endif %}
+
+  {% if flags.comments %}
+    {{ Comments.Block() }}
+  {% endif %}
+
+{% endblock %}
