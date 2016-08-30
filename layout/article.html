@@ -9,7 +9,7 @@
 
     {% call Article.Container() -%}
 
-      {% call Article.Header() -%}
+      {% call Article.Header(layout.name) -%}
         {% block article_head %}
 
         {% if flags.shareButtons %}
@@ -23,7 +23,7 @@
         {% endblock %}
       {%- endcall %}
 
-      {% call Article.Body() %}
+      {% call Article.Body(layout.name) %}
         {% block article_body %}{% endblock %}
       {% endcall %}
 

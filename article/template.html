@@ -11,12 +11,14 @@
 {% endmacro %}
 
 {% macro Lead(text, relatedArticle) %}
+{% if text %}
 <p class="o-typography-lead">
   {{ text | md(true) }}
   {% if relatedArticle %}
   <a href="{{ relatedArticle.url }}" class="o-typography-link">{{ relatedArticle.text }}</a>
   {% endif %}
 </p>
+{% endif %}
 {% endmacro %}
 
 {%- macro PublicationTime(date) -%}
@@ -57,21 +59,22 @@
   {% if date %}
   <meta itemprop="dateModified" content="{{ publishedDate | isotime }}">
   {% endif %}
-  <p>{{ PublicationTime(date) }}{%- if byline -%}&#32;<span class="article__byline">{{ Byline(byline) }}</span>{%- endif -%}</p>
+  <p class="article-head__dateline">{{ PublicationTime(date) }}{%- if byline -%}&#32;<span class="article__byline">{{ Byline(byline) }}</span>{%- endif -%}</p>
 {% endmacro %}
 
 {% macro Header() %}
 <div class="article-head section-head o-grid-container">
   <div class="o-grid-row">
-    <header data-o-grid-colspan="12 S11 Scenter M9 L8 XL7">
+    <header data-o-grid-colspan="center 12 M10 L8 XL7">
       {{ caller() }}
     </header>
   </div>
 </div>
 {% endmacro %}
 
-{% macro Body() %}
-<div class="article-body section-body body o-typography-body-wrapper" itemprop="articleBody">
+{% macro Body(layoutName) %}
+{% set layoutClass = 'section-body' if not layoutName else layoutName %}
+<div class="article-body {{ layoutClass }} body o-typography-body-wrapper" itemprop="articleBody">
 {{ caller() }}
 </div>
 {% endmacro %}
