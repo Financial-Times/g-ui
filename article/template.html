@@ -62,10 +62,11 @@
   <p class="article-head__dateline">{{ PublicationTime(date) }}{%- if byline -%}&#32;<span class="article__byline">{{ Byline(byline) }}</span>{%- endif -%}</p>
 {% endmacro %}
 
-{% macro Header() %}
+{% macro Header(layoutName) %}
+{% set colspan = "12 L8 XL7 XLoffset1" if layoutName == "left-body" else "center 12 M10 L8 XL7" %}
 <div class="article-head section-head o-grid-container">
   <div class="o-grid-row">
-    <header data-o-grid-colspan="center 12 M10 L8 XL7">
+    <header data-o-grid-colspan="{{ colspan }}">
       {{ caller() }}
     </header>
   </div>
