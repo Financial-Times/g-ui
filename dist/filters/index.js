@@ -78,7 +78,7 @@ function md(str, inline) {
 }
 
 function plain(str, stripListLeaders = true) {
-  return (0, _removeMarkdown2.default)(str, { stripListLeaders, gfm: true });
+  return !str ? null : (0, _removeMarkdown2.default)(str, { stripListLeaders, gfm: true });
 }
 
 function json(o, prop) {
