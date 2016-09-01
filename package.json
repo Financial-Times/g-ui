@@ -4,9 +4,10 @@
   "description": "Styles for Graphics (IG) web pages. Inspired by [n-ui](https://github.com/Financial-Times/n-ui).",
   "main": "lib/index.js",
   "dependencies": {
-    "nunjucks": "^2.4.2",
     "chokidar": "^1.6.0",
+    "d3-time-format": "^2.0.2",
     "markdown-it": "^7.0.0",
+    "nunjucks": "^2.4.2",
     "nunjucks-markdown": "^2.0.0",
     "remove-markdown": "^0.1.0"
   },
