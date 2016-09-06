@@ -20,6 +20,7 @@
 {% endfilter %}
 
 {% macro SpoorMeta(config) %}
+<meta property="ft.track:is_live" content="true"/>
 <meta property="ft.track:product" content="{{ config.product | default("IG", true) }}"/>
 {%- if config.micrositeName %}
 <meta property="ft.track:microsite_name" content="{{ config.micrositeName }}"/>
