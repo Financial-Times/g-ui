@@ -13,7 +13,7 @@
 {% macro oErrors(sentryEndpoint, on=false) %}
 {%- if on -%}
 <script type="application/json" data-o-errors-config>
-{"sentryEndpoint": "{ sentryEndpoint | default("https://ddbd80489ff549538250bbe37fa52bbd@app.getsentry.com/71130", true) }}"}
+{"sentryEndpoint": "{{ sentryEndpoint | default("https://ddbd80489ff549538250bbe37fa52bbd@app.getsentry.com/71130", true) }}"}
 </script>
 <script async src="https://origami-build.ft.com/v2/bundles/js?export=oErrors&modules=o-errors@^3.4.0"></script>
 {% endif %}
