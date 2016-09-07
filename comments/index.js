@@ -18,7 +18,7 @@ export default function init({elementId = 'comments', delay = 1000, initialNumVi
   return new Promise(function(resolve, reject) {
     setTimeout(() => {
       queue(oCommentsUrl, () => {
-        if (!oComments) {
+        if (!window.oComments) {
           Promise.reject('Couldn\'t get oComments');
           return;
         }
