@@ -5,23 +5,29 @@ function add_script(src, async, defer, cb) {
     script.src = src;
     script.async = !!async;
     if (defer) script.defer = !!defer;
-    var oldScript = document.getElementsByTagName('script')[0];
+    var head = document.head || document.getElementsByTagName('head')[0];
     if (!cb && typeof defer === 'function') {
       cb = defer;
     }
 
     if (typeof cb === 'function') {
-      if (script.hasOwnProperty('onreadystatechange')) {
-        script.onreadystatechange = function() {
-          if (script.readyState === 'loaded') {
+
+      function onScriptLoaded() {
+        var readyState = this.readyState; // we test for "complete" or "loaded" if on IE
+        if (!readyState || /ded|te/.test(readyState)) {
+          try {
             cb();
+          } catch (error) {
+            if (window.console && console.error) {
+              console.error(error);
+            }
           }
-        };
-      } else {
-        script.onload = cb;
+        }
       }
+
+      script.onload = script.onerror = script.onreadystatechange = onScriptLoaded;
     }
-    oldScript.parentNode.appendChild(script);
+    head.appendChild(script);
     return script;
 }
 
@@ -100,17 +106,15 @@ function clear_queue() {
 // Load the polyfill service with custom features. Exclude big unneeded polyfills.
 // and use ?callback= to clear the queue of scripts to load
 const defaultPolyfillFeatures = [
-  'default',
-  'requestAnimationFrame',
-  'Promise',
+  'default-3.6',
   'matchMedia',
+  'fetch|always|gated',
   'IntersectionObserver',
-  'HTMLPictureElement',
-  'fetch|always|gated'
+  'HTMLPictureElement'
 ];
 
 const createPolyfillURL = features =>
-  `https://cdn.polyfill.io/v2/polyfill.min.js?callback=clear_queue&features=${features.join(',')}&excludes=Symbol,Symbol.iterator,Symbol.species,Map,Set`;
+  `https://cdn.polyfill.io/v2/polyfill.min.js?callback=clear_queue&features=${features.join(',')}&excludes=Symbol,Symbol.iterator,Symbol.species`;
 
 export function init({polyfillFeatures=defaultPolyfillFeatures} = {}) {
 
