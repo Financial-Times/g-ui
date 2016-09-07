@@ -9,6 +9,8 @@ export function init() {
   if (initialized) return;
   initialized = true;
 
+  if (!window.flags) return;
+
   if (flags.analytics) analytics();
   if (flags.ads) ads().catch(console.log);
   if (flags.onwardJourney) onwardJourney();
