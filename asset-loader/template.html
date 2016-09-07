@@ -6,7 +6,7 @@
 
 {% macro Stylesheets(urls) -%}
 {%- if urls %}{%- for url in urls %}
-<link rel="stylesheet" href="{{ url }}">
+<link rel="stylesheet" href="{{ url | safe }}">
 {%- endfor -%}{%- endif -%}
 {%- endmacro %}
 
