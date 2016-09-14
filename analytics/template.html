@@ -20,6 +20,7 @@
 {% endfilter %}
 
 {% macro SpoorMeta(config) %}
+<link rel="preconnect" href="https://spoor-api.ft.com">
 <meta property="ft.track:is_live" content="true"/>
 <meta property="ft.track:product" content="{{ config.product | default("IG", true) }}"/>
 {%- if config.micrositeName %}
