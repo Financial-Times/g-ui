@@ -1,6 +1,6 @@
 export const elementSelector = '[data-g-component="onward-journey"]';
 
-export const serviceBaseUrl = 'https://ft-ig-onwardjourney.herokuapp.com/v1/';
+export const serviceBaseUrl = 'https://ig.ft.com/onwardjourney/v1/';
 
 export const fetchList = (list, layout, limit) =>
             fetch(`${serviceBaseUrl}${list}/html/${layout}?limit=${limit}`)
