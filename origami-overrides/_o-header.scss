@@ -3,3 +3,36 @@
     border-bottom: 1px solid #e9decf;
   }
 }
+
+
+.o-header__marketing-promo {
+  background-color: #333;
+  color: #fff;
+  display: none;
+
+  &.visible {
+    @include oGridRespondTo('M') {
+      display: block;
+    }
+  }
+
+}
+
+.o-header__marketing-promo__container {
+  display: table;
+  height: 50px;
+}
+
+.o-header__marketing-promo__box {
+  @include oTypographySansSize(s);
+  display: table-cell;
+  vertical-align: middle;
+  text-align: right;
+  padding-right: 120px;
+  background: url('https://image.webservices.ft.com/v1/images/raw/https%3A%2F%2Fnext-geebee.ft.com%2Fassets%2Fproduct%2Fpack-shot-next-2.png?source=ig&height=160') right top no-repeat;
+  background-size: auto 50px;
+}
+
+.o-header__marketing-promo__link {
+  word-spacing: 1px;
+}

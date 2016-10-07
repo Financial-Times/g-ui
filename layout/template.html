@@ -77,6 +77,10 @@
 
 {{ Analytics.GoogleAnalytics(id=tracking.googleAnalyticsPropertyID, on=flags.googleAnalytics) }}
 
+{% if flags.headerMarketingPromo %}
+  {% include "g-ui/header/marketing-promo.html" %}
+{% endif %}
+
 {% if flags.header %}
   {% include "g-ui/header" %}
 {% endif %}
