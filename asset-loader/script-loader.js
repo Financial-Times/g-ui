@@ -110,7 +110,9 @@ const defaultPolyfillFeatures = [
   'matchMedia',
   'fetch|always|gated',
   'IntersectionObserver',
-  'HTMLPictureElement'
+  'HTMLPictureElement',
+  'Map|always|gated',
+  'Array.from|always|gated'
 ];
 
 const createPolyfillURL = features =>
@@ -127,12 +129,8 @@ export function init({polyfillFeatures=defaultPolyfillFeatures} = {}) {
   window.exec = exec;
 
   exec(function(){
-    window.isNext = document.cookie.indexOf('FT_SITE=NEXT') !== -1;
-    window.isLoggedIn = document.cookie.indexOf('FTSession=') !== -1;
     document.documentElement.className = document.documentElement.className.replace(/\bcore\b/g, [
-      'enhanced',
-      (window.isNext ? 'is-next' : 'is-falcon'),
-      (window.isLoggedIn ? 'is-loggedin' : 'is-anonymous')
+      'enhanced'
     ].join(' '));
   });
 
