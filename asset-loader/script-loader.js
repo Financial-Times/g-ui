@@ -1,14 +1,19 @@
 /* eslint-disable */
 
-function add_script(src, async, defer, cb) {
-    var script = document.createElement('script');
-    script.src = src;
-    script.async = !!async;
-    if (defer) script.defer = !!defer;
-    var head = document.head || document.getElementsByTagName('head')[0];
-    if (!cb && typeof defer === 'function') {
-      cb = defer;
+function add_script(src, async, defer, cb, attributes) {
+  var script = document.createElement('script');
+  script.src = src;
+  script.async = !!async;
+  if (attributes) {
+    for (var key in attributes) {
+      script.setAttribute(key, attributes[key]);
     }
+  }
+  if (defer) script.defer = !!defer;
+  var head = document.head || document.getElementsByTagName('head')[0];
+  if (!cb && typeof defer === 'function') {
+    cb = defer;
+  }
 
     if (typeof cb === 'function') {
 
@@ -25,10 +30,10 @@ function add_script(src, async, defer, cb) {
         }
       }
 
-      script.onload = script.onerror = script.onreadystatechange = onScriptLoaded;
-    }
-    head.appendChild(script);
-    return script;
+    script.onload = script.onerror = script.onreadystatechange = onScriptLoaded;
+  }
+  head.appendChild(script);
+  return script;
 }
 
 function exec(script) {
@@ -55,8 +60,8 @@ function exec(script) {
 var queued_scripts = [];
 var low_priority_queue = [];
 
-function queue(src, cb, low_priority) {
-  var args = [src, true, !!low_priority, cb];
+function queue(src, cb, low_priority, attributes) {
+  var args = [src, true, !!low_priority, cb, attributes];
 
   if (!queued_scripts) {
     exec.apply(window, args);
@@ -134,5 +139,5 @@ export function init({polyfillFeatures=defaultPolyfillFeatures} = {}) {
     ].join(' '));
   });
 
-  exec(createPolyfillURL(polyfillFeatures), true, true)
+  exec(createPolyfillURL(polyfillFeatures), true, true, null, {crossorigin: 'anonymous'});
 }
