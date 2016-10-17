@@ -67,7 +67,7 @@
 {% block appendhead %}{% endblock -%}
 
 </head>
-<body>
+<body {% if layout.name %}class="layout--{{ layout.name }}"{% endif %}>
 
 {% if flags.analytics %}
 {% include "g-ui/analytics" %}
