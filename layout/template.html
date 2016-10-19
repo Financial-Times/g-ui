@@ -25,13 +25,6 @@
 
 <link inline rel="stylesheet" href="g-ui/critical.css">
 
-{% set defaultStylesheets = [
-    "https://origami-build.ft.com/v2/bundles/css?modules=o-grid@^4.2.1,o-cookie-message@^2.2.0",
-    "g-ui/main.css",
-    "main.css"]
-%}
-{{ AssetLoader.Stylesheets(defaultStylesheets) }}
-
 {{ AssetLoader.Stylesheets(stylesheets) }}
 
 {{ Meta.Website_JSONLD() }}
@@ -96,16 +89,10 @@
 {% endif %}
 
 
-<script async>
-queue([
-  'main.js',
-  'g-ui/index.js',
-  'https://origami-build.ft.com/v2/bundles/js?export=oDate&modules=o-date@^2.6.0,o-cookie-message@^2.2.0'
-  {% if scripts %}{% for script in scripts %}
-  ,'{{ script | safe }}'
-  {% endfor %}{% endif %}
-]);
-</script>
-
+<script>queue([
+  {%- if scripts %}{% for script in scripts -%}
+  '{{ script | safe }}',
+  {%- endfor %}{% endif -%}
+]);</script>
 </body>
 </html>
