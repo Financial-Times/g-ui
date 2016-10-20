@@ -91,7 +91,7 @@
 
 <script>queue([
   {%- if scripts %}{% for script in scripts -%}
-  '{{ script | safe }}',
+  '{{ script | safe }}'{% if not loop.last %},{% endif %}
   {%- endfor %}{% endif -%}
 ]);</script>
 </body>
