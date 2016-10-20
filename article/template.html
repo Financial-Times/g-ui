@@ -1,0 +1,102 @@
+{%- macro Tag(name, url) -%}
+  {%- if name and url -%}
+  <a href="{{ url }}" class="o-typography-link-topic o-typography-link-topic--medium">{{ name }}</a>
+  {%- endif -%}
+{%- endmacro -%}
+
+{% macro H1(text) %}
+  {% if text %}
+  <h1 class="o-typography-heading1" itemprop="headline">{{ text | md(true) }}</h1>
+  {% endif %}
+{% endmacro %}
+
+{% macro Lead(text, relatedArticle) %}
+{% if text %}
+<p class="o-typography-lead">
+  {{ text | md(true) }}
+  {% if relatedArticle %}
+  <a href="{{ relatedArticle.url }}" class="o-typography-link">{{ relatedArticle.text }}</a>
+  {% endif %}
+</p>
+{% endif %}
+{% endmacro %}
+
+{%- macro PublicationTime(date) -%}
+  {%- if date -%}
+  <time class="article__timestamp o-date o-typography-timestamp"
+          data-o-component="o-date" datetime="{{ date | isotime }}"
+          itemprop="datePublished" content="{{ date | isotime }}"
+          data-o-date-js>{{ date | ftdate }}</time>
+  {%- endif -%}
+{%- endmacro -%}
+
+{%- macro Byline(value) -%}
+  {%- if value -%}
+  by&nbsp;
+  {%- if value.push -%}
+    {%- for author in value -%}
+      {{ " and " if not loop.first and loop.last else (", " if not loop.first else "") }}
+      {%- if author.url -%}
+        <a href="{{ author.url }}" class="o-typography-link-topic o-typography-link-topic--small" itemprop="author">{{ author.name }}</a>
+      {%- else -%}
+        {{ author.name }}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- else -%}
+    {{ value | md(true) }}
+  {%- endif -%}
+  {%- endif -%}
+{%- endmacro -%}
+
+{% macro TitleBlock(title, lead, byline, date, tag, relatedArticle) %}
+  {% if tag %}
+    <div>
+      {{ Tag(tag.name, tag.url) }}
+    </div>
+  {% endif %}
+  {{ H1(title)}}
+  {{ Lead(lead, relatedArticle) }}
+  {% if date %}
+  <meta itemprop="dateModified" content="{{ publishedDate | isotime }}">
+  {% endif %}
+  <p class="article-head__dateline">{{ PublicationTime(date) }}{%- if byline -%}&#32;<span class="article__byline">{{ Byline(byline) }}</span>{%- endif -%}</p>
+{% endmacro %}
+
+{% macro Header(layoutName) %}
+{% set colspan = "12 L8 XL7 XLoffset1" if layoutName == "left-body" else "center 12 M10 L8 XL7" %}
+<div class="article-head section-head o-grid-container">
+  <div class="o-grid-row">
+    <header data-o-grid-colspan="{{ colspan }}">
+      {{ caller() }}
+    </header>
+  </div>
+</div>
+{% endmacro %}
+
+{% macro Body(layoutName) %}
+{% set layoutClass = 'section-body' if not layoutName else layoutName %}
+<div class="article-body {{ layoutClass }} body o-typography-body-wrapper" itemprop="articleBody">
+{{ caller() }}
+</div>
+{% endmacro %}
+
+{% macro Footer() %}
+<footer class="article-body section-body body o-typography-body-wrapper">
+  {{ caller() }}
+  <div class="o-typography-footer" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+    <small><a href="http://www.ft.com/servicestools/help/copyright" data-trackable="link-copyright">Copyright</a>
+    <div style="display:none;" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img itemprop="url" src="https://image.webservices.ft.com/v1/images/raw/ftlogo:brand-ft-masthead?source=o-header&format=png&width=200" />
+      <meta itemprop="width" content="200" />
+      <meta itemprop="height" content="16" />
+    </div>
+    <span itemprop="name">The Financial Times</span> Limited 2016. All rights reserved. You may share using our article tools. Please don't cut articles from FT.com and redistribute by email or post to the web.</small>
+  </div>
+</footer>
+{% endmacro %}
+
+{% macro Container() %}
+<article class="article" itemscope itemtype="http://schema.org/Article">
+  {{ caller() }}
+</article>
+{% endmacro %}

@@ -1,4 +1,4 @@
-$ig-article-is-silent: false;
+$g-ui-is-silent: false;
 $o-grid-is-silent: false;
 @import '../../main';
 
@@ -38,7 +38,7 @@ $o-grid-is-silent: false;
   line-height: 16px;
   font-size: 14px;
   font-weight: 600;
-  font-size: 16px;
+  // font-size: 16px;
   position: relative;
   background-color: #fff1e0;
   border-bottom: 0;
@@ -46,13 +46,13 @@ $o-grid-is-silent: false;
   margin-left: 10px;
   padding: 8px 20px 0 10px;
   min-height: 24px;
-  -webkit-transition: color .3s;
-  transition: color .3s;
+  // -webkit-transition: color .3s;
+  transition: color 0.3s;
   color: #27757b;
   text-decoration: none;
   display: none;
   &:hover {
-    color: #333;
+    color: #333333;
   }
 }
 
@@ -65,7 +65,8 @@ $o-grid-is-silent: false;
   top: 8px;
   right: 0;
 }
-.header__link:after, .header__link:hover:after {
+.header__link:after,
+.header__link:hover:after {
   width: 16px;
   height: 16px;
   background-repeat: no-repeat;

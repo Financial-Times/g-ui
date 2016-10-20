@@ -1,0 +1,7 @@
+{% macro RelatedContent(sections) %}
+{% for section in sections %}
+{% if loop.first %}<aside class="onward-journey__block">{% endif %}
+  <section class="onward-journey__section" data-g-component="onward-journey" data-list="{{ section.list | safe }}" data-rows="{{ section.rows | default('1', true) }}"></section>
+{% if loop.last %}</aside>{% endif %}
+{% endfor %}
+{% endmacro %}

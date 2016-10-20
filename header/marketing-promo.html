@@ -1,0 +1,58 @@
+<div class="o-header__marketing-promo" data-trackable="marketing-promo:header">
+  <div class="o-header__marketing-promo__container o-header__container">
+  	<a href="https://www.ft.com/products" class="o-header__marketing-promo__box" data-trackable="marketing-promo:box">
+  		<div class="o-header__marketing-promo__link o-buttons o-buttons--standout" data-trackable="marketing-promo:link">Subscribe to the FT</div>
+  	</a>
+  </div>
+</div>
+<script>
+  queue(function(){
+    if (!window.fetch) return;
+
+    var corsSupport = ('withCredentials' in new XMLHttpRequest());
+
+    if (!corsSupport) {
+      return;
+    }
+
+    function sessionIsForRegisteredUser (session) {
+    	return session.products
+    		&& session.products.indexOf('P0') > -1
+    		&& session.products.indexOf('P1') === -1
+    		&& session.products.indexOf('P2') === -1;
+    }
+
+    function sessionIsForWeekendUser (session) {
+    	return session.products
+    		&& session.products.indexOf('P6') > -1
+    		&& session.products.indexOf('P1') === -1
+    		&& session.products.indexOf('P2') === -1;
+    }
+
+    function showPromo() {
+      var promo = document.querySelector('.o-header__marketing-promo');
+      if (promo) {
+        promo.classList.add('visible');
+      }
+    }
+
+    fetch(
+      'https://session-next.ft.com/',
+      { timeout: 2000, credentials: 'include' }
+    ).then(
+      function(response) {
+        return response.status === 200 ? response.json() : {};
+      }
+    ).then(
+      function(session) {
+        var isForAnonymousUser = !session.products;
+        var isForRegisteredUser = sessionIsForRegisteredUser(session);
+        var isForWeekendUser = sessionIsForWeekendUser(session);
+        if (isForAnonymousUser || isForRegisteredUser || isForWeekendUser) {
+          setTimeout(showPromo, 0);
+				}
+      }
+    );
+
+  })
+</script>

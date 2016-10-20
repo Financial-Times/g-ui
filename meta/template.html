@@ -1,0 +1,65 @@
+{% macro StandardMetadata(url, title, description, image) %}
+<title>{{ title }}</title>
+<link rel="canonical" href="{{ url }}">
+<meta name="description" content="{{ description }}">
+<link rel="image_src" href="{{ image }}">
+<meta name="robots" content="index,follow">
+<meta name="copyright" content="Financial Times">
+<link rel="shortcut icon" href="https://ig.ft.com/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="https://ig.ft.com/apple-touch-icon.png">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#fff1e0" />
+<link href="https://plus.google.com/113457471429583444041/" rel="publisher" />
+{% endmacro%}
+
+{% macro TwitterCard(url, title, description, image, creator, type="summary") %}
+<meta name="twitter:card" content="{{ type }}">
+<meta name="twitter:url" content="{{ url }}">
+<meta name="twitter:site" content="@ft">
+<meta name="twitter:title" content="{{ title }}">
+{%- if image -%}
+<meta name="twitter:image" content="{{ image }}">
+{%- endif -%}
+{%- if description -%}
+<meta name="twitter:description" content="{{ description }}">
+{%- endif -%}
+{%- if creator -%}
+<meta name="twitter:creator" content="{{ creator }}">
+{%- endif -%}
+{% endmacro %}
+
+{% macro FacebookOpenGraph(url, title, description, image) %}
+<meta property="fb:app_id" content="429755910551755" />
+<meta property="og:url" content="{{ url }}">
+<meta property="og:title" content="{{ title }}">
+<meta property="og:description" content="{{ description }}">
+<meta property="og:image" content="{{ image }}">
+{% endmacro %}
+
+{%- macro Website_JSONLD() -%}
+<script type="application/ld+json">{
+"@context": "http://schema.org",
+"@type": "WebSite",
+"name": "Financial Times",
+"alternateName": "FT.com",
+"url": "https://www.ft.com"
+}</script>
+{%- endmacro -%}
+
+{% macro BreadcrumbList_JSONLD(items) -%}
+{%- if items and items.length -%}
+<script type="application/ld+json">{
+"@context": "http://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement": [
+{%- for item in items -%}{% if item %}
+  {"@type": "ListItem","position": {{ loop.index }},
+  "item": {
+    "@id": "{{ item.url }}",
+    "name": "{{ item.name }}","image": ""
+  }
+}{%- if not loop.last %},{% endif -%}
+{% endif -%}{%- endfor -%}
+]
+}</script>{%- endif -%}
+{%- endmacro -%}

@@ -1,27 +1,21 @@
-$ig-article-is-silent: true !default;
-
-@if not $ig-article-is-silent {
 @import "o-colors/main";
-
-@import "scss/core/normalize";
-@import "scss/core/units";
-@import "scss/core/colors";
-
 @import "o-grid/main";
 
-@import "scss/typography/main";
-@import "scss/share/main";
+@import "core/normalize";
+@import "core/units";
+@import "core/colors";
+@import "core/block";
 
-@import "scss/block";
-@import "scss/section/main";
-@import "scss/viz/main";
-@import "scss/griddle/main";
-@import "scss/onward-journey/onward-journey";
+@import "typography/main";
+@import "share/main";
+@import "section/main";
+@import "viz/main";
+@import "griddle/main";
+@import "onward-journey/main";
+@import "ads/main";
 
 // Don't depend on o-header, o-footer or o-card; use the build service.
-@import "scss/origami-overrides/o-header";
-@import "scss/origami-overrides/o-footer";
-@import "scss/origami-overrides/o-card";
+@import "origami-overrides/o-header";
+@import "origami-overrides/o-footer";
 
-@import "scss/core/page";
-}
+@import "core/page";

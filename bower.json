@@ -1,5 +1,5 @@
 {
-  "name": "ig-article",
+  "name": "g-ui",
   "main": [
     "main.js",
     "main.scss"
@@ -9,13 +9,11 @@
     "circle.yml"
   ],
   "dependencies": {
-    "o-typography": "^4",
-    "o-date": "^2.3.3",
-    "o-grid": "^4",
+    "o-typography": "^4.3.1",
+    "o-date": "^2.6.1",
+    "o-grid": "^4.2.1",
     "o-share": "^2",
-    "o-card": "Financial-Times/o-card#^2.1.4"
-  },
-  "resolutions": {
-    "o-typography": "^4"
+    "o-card": "^2.1.8",
+    "o-ads": "^5.4.2"
   }
 }

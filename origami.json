@@ -1,8 +1,10 @@
 {
 	"description": "IG web page styles",
 	"origamiType": "module",
+	"origamiGroup": "component",
+	"origamiCategory": "components",
 	"origamiVersion": 1,
-	"support": "https://github.com/Financial-Times/ig-article/issues",
+	"support": "https://github.com/Financial-Times/g-ui/issues",
 	"supportStatus": "experimental",
 	"demosDefaults": {
 		"sass": "demos/src/demo.scss",
@@ -11,7 +13,7 @@
 		"documentClasses": "core"
 	},
 	"ci": {
-		"circle": "https://circleci.com/api/v1/project/Financial-Times/ig-article"
+		"circle": "https://circleci.com/api/v1/project/Financial-Times/g-ui"
 	},
 	"demos": [
 		{
