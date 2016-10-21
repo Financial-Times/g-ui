@@ -1,6 +1,6 @@
 $ig-article-is-silent: true !default;
 
-@if not $ig-article-is-silent {
+//@if not $ig-article-is-silent {
 @import "o-colors/main";
 
 @import "scss/core/normalize";
@@ -24,4 +24,4 @@ $ig-article-is-silent: true !default;
 @import "scss/origami-overrides/o-card";
 
 @import "scss/core/page";
-}
+//}
