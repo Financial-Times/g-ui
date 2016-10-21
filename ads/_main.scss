@@ -2,10 +2,6 @@ $o-ads-is-silent: false;
 
 @import "o-ads/main";
 
-.above-header-advert {
-  display: block;
-  padding: 10px 0; }
-
 [data-o-ads-name="mid"]{
   margin-top: 18px;
   margin-bottom: 18px;
@@ -15,6 +11,10 @@ $o-ads-is-silent: false;
   height: 0 !important;
   min-height: 0 !important;
   padding: 0 !important; }
+
+.o-ads--background {
+  background-color: #cec6b9;
+}
 
 .advert--background {
   background-color: #e9decf;
@@ -53,6 +53,13 @@ $o-ads-is-silent: false;
   height: 250px;
   min-height: 250px;
   padding: 10px 0; }
+
+.advert--reserve-90,
+.advert--reserve-250,
+.o-ads--reserve-90,
+.o-ads--reserve-250 {
+  box-sizing: content-box;
+}
 
 @media (max-width: 90em) {
   .advert--reserve-90[data-o-ads-loaded=Responsive],
