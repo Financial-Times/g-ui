@@ -1,7 +1,13 @@
-{% macro ResourceHints() %}
+{% macro ResourceHints(flags) %}
 <link rel="preconnect" href="https://origami-build.ft.com">
-<link rel="preconnect" href="https://build.origami.ft.com" crossorigin>
 <link rel="preconnect" href="https://cdn.polyfill.io">
+<link rel="preconnect" href="https://image.webservices.ft.com">
+{% if flags.prod %}
+<link rel="preconnect" href="https://session-next.ft.com" crossorigin="use-credentials">
+{% endif %}
+{% if flags.ads %}
+<link rel="preconnect" href="https://securepubads.g.doubleclick.net">
+{% endif %}
 {% endmacro %}
 
 {% macro Stylesheets(urls) -%}
