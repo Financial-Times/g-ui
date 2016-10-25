@@ -1,5 +1,6 @@
 export default function analytics() {
-  queue('https://origami-build.ft.com/v2/bundles/js?modules=o-tracking&export=oTracking&autoinit=0', function () {
+  // https://origami-build.ft.com/v2/bundles/js?modules=o-tracking&export=oTracking&autoinit=0
+  queue('http://ig.ft.com/static/g-ui/o-tracking.20161025.js', function () {
 
     if (!window.oTracking) {
         throw new Error('Could not load oTracking');
