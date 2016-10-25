@@ -13,6 +13,8 @@
 }
 
 $o-typography-is-silent: false;
+$o-typography-load-fonts: false;
+
 @import "o-typography/main";
 @import "../origami-overrides/o-typography";
 @import "head";
