@@ -117,11 +117,12 @@ const defaultPolyfillFeatures = [
   'IntersectionObserver',
   'HTMLPictureElement',
   'Map|always|gated',
-  'Array.from|always|gated'
+  'Array.from|always|gated',
+  'Array.prototype.includes|always|gated'
 ];
 
 const createPolyfillURL = features =>
-  `https://cdn.polyfill.io/v2/polyfill.min.js?callback=clear_queue&features=${features.join(',')}&excludes=Symbol,Symbol.iterator,Symbol.species`;
+  `https://cdn.polyfill.io/v2/polyfill.min.js?callback=clear_queue&features=${features.join(',')}&flags=gated&unknown=polyfill&excludes=Symbol,Symbol.iterator,Symbol.species`;
 
 export function init({polyfillFeatures=defaultPolyfillFeatures} = {}) {
 
