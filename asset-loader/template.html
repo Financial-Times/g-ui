@@ -21,10 +21,10 @@
 <script type="application/json" data-o-errors-config>
 {"sentryEndpoint": "{{ sentryEndpoint | default("https://ddbd80489ff549538250bbe37fa52bbd@app.getsentry.com/71130", true) }}"}
 </script>
-{{#
+{#
 Temporarily us o-errors on IG. Original build service url was
 https://origami-build.ft.com/v2/bundles/js?export=oErrors&modules=o-errors@^3.5.1
-#}}
+#}
 <script src="https://ig.ft.com/static/g-ui/o-errors.20161025.js"></script>
 {% endif %}
 {% endmacro %}
