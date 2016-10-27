@@ -35,6 +35,7 @@ $font-base: 'https://origami-build.ft.com/v2/files/o-fonts-assets@1.3.0';
   font-weight : 500;
   src         : url("#{$font-base}/MetricWeb-Medium.woff?#iefix") format("woff");
 }
+*/
 
 @font-face {
   font-family : MetricWeb;
@@ -42,7 +43,7 @@ $font-base: 'https://origami-build.ft.com/v2/files/o-fonts-assets@1.3.0';
   font-weight : 600;
   src         : url("#{$font-base}/MetricWeb-Semibold.woff?#iefix") format("woff");
 }
-*/
+
 
 /* Do we _really_ need this?
 @font-face {
