@@ -1,7 +1,7 @@
 <div class="o-header__marketing-promo" data-trackable="marketing-promo:header">
   <div class="o-header__marketing-promo__container o-header__container">
-  	<a href="https://www.ft.com/products" class="o-header__marketing-promo__box" data-trackable="marketing-promo:box">
-  		<div class="o-header__marketing-promo__link o-buttons o-buttons--standout" data-trackable="marketing-promo:link">Subscribe to the FT</div>
+  	<a href="{{ subspromo.header.href | default('https://www.ft.com/products', true) }}" class="o-header__marketing-promo__box" data-trackable="marketing-promo:box">
+  		<div class="o-header__marketing-promo__link o-buttons o-buttons--standout" data-trackable="marketing-promo:link">{{ subspromo.header.text | default('Subscribe to the FT', true) }}</div>
   	</a>
   </div>
 </div>
