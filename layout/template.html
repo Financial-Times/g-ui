@@ -51,9 +51,7 @@
     description=description,
     creator=twitterCreator) }}
 
-{%- if flags.analytics %}
-  {{ Analytics.SpoorMeta(tracking) }}
-{% endif -%}
+{{ Analytics.SpoorMeta(tracking, flags.analytics) }}
 
 {{ Ads.ConfigJSON(config=ads, on=flags.ads) }}
 
