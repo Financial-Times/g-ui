@@ -13,7 +13,7 @@
 {% macro Lead(text, relatedArticle) %}
 {% if text %}
 <div class="o-typography-lead">
-  {{ text }}
+  {{ text | safe }}
   {% if relatedArticle %}
   <a href="{{ relatedArticle.url }}" class="o-typography-link">{{ relatedArticle.text }}</a>
   {% endif %}
