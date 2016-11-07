@@ -12,12 +12,12 @@
 
 {% macro Lead(text, relatedArticle) %}
 {% if text %}
-<p class="o-typography-lead">
-  {{ text | md(true) }}
+<div class="o-typography-lead">
+  {{ text | md }}
   {% if relatedArticle %}
   <a href="{{ relatedArticle.url }}" class="o-typography-link">{{ relatedArticle.text }}</a>
   {% endif %}
-</p>
+</div>
 {% endif %}
 {% endmacro %}
 
