@@ -60,9 +60,7 @@
 </head>
 <body {% if layout.name %}class="layout--{{ layout.name }}"{% endif %}>
 
-{% if flags.analytics %}
 {% include "g-ui/analytics" %}
-{% endif %}
 
 {% if flags.cookieMessage %}
 <div data-o-component="o-cookie-message" class="o-cookie-message o-cookie-message--banner-centric"></div>
