@@ -12,7 +12,7 @@
 import { h } from 'preact';
 
 const GFooter = (props) => (
-  <footer className="o-footer o-footer--theme-dark" data-o-component="o-footer" data-o-footer--no-js>
+  <footer className="g-footer o-footer o-footer--theme-dark" data-o-component="o-footer" data-o-footer--no-js>
     <div className="o-footer__container">
       <div className="o-footer__row">
         <nav className="o-footer__matrix" role="navigation" aria-label="Useful links">

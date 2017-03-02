@@ -13,7 +13,7 @@ import { h } from 'preact';
 import './main.scss';
 
 const GHeader = (props) => (
-  <div>
+  <div className="g-header">
     <header className="o-header o-header--simple" data-o-component="o-header" data-o-header--no-js>
       <div className="o-header__row o-header__top">
         <div className="o-header__container">

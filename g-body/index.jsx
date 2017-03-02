@@ -1,9 +1,9 @@
 import { h } from 'preact';
 
 const GBody = ({ children }) => (
-  <div class="g-body">
+  <article class="g-body">
     {children}
-  </div>
+  </article>
 );
 
 export default GBody;

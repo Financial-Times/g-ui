@@ -9,7 +9,7 @@ import GBody from '../g-body';
 import { h } from 'preact';
 
 const GPage = ({ children }) => (
-  <div id="root">
+  <div id="root" class="g-page">
     <GHeader />
     <GBody>
       {children}
