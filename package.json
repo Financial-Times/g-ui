@@ -2,7 +2,7 @@
   "name": "g-ui",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "g-page/index.jsx",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -20,5 +20,19 @@
   "dependencies": {
     "preact": "^7.2.0",
     "styled-components": "^1.4.3"
+  },
+  "babel": {
+    "plugins": [
+      [
+        "transform-react-jsx",
+        {
+          "pragma": "h"
+        }
+      ]
+    ]
+  },
+  "devDependencies": {
+    "babel-core": "^6.23.1",
+    "babel-plugin-transform-react-jsx": "^6.23.0"
   }
 }

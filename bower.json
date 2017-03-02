@@ -1,0 +1,24 @@
+{
+  "name": "g-ui",
+  "description": "React components for great awesomeness",
+  "main": "index.js",
+  "authors": [
+    "Ændrew Rininsland <andrew.rininsland@ft.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/Financial-Times/g-ui",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "o-header": "^6.14.0",
+    "o-footer": "^5.3.3",
+    "o-typography": "^4.3.3",
+    "o-colors": "^3.6.0"
+  }
+}
