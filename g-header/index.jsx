@@ -2,14 +2,15 @@
 * Header component
 * ----------------
 * Gets styles from o-header
-* Requires keeping markup up-to-date with whatever insanity they have in o-header.
+* Requires keeping markup up-to-date with whatever they have in o-header.
 *
 * Converted to JSX via http://magic.reactjs.net/htmltojsx.htm
 * @TODO write script that generates this automatically from mustache/handlebars using HTMLtoJSX.
+* @TODO import styles, JS via Bower instead of Build Service (maybe?)
 */
 
 import { h } from 'preact';
-// import './main.scss';
+import './main.scss';
 
 const GHeader = (props) => (
   <div>
