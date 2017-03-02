@@ -7,8 +7,8 @@
 
 import { h } from 'preact';
 
-const gFooter = (props) => (
+const GFooter = (props) => (
   <footer />
 );
 
-export default gFooter;
+export default GFooter;

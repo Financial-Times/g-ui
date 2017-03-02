@@ -2,20 +2,20 @@
  * g-page: Graphics Page Container
  */
 
-import gHeader from '../g-header';
-import gFooter from '../g-footer';
-import gBody from '../g-body';
+import GHeader from '../g-header';
+import GFooter from '../g-footer';
+import GBody from '../g-body';
 
 import { h } from 'preact';
 
-const gPage = ({ children }) => (
+const GPage = ({ children }) => (
   <div id="root">
-    <gHeader />
-    <gBody>
+    <GHeader />
+    <GBody>
       {children}
-    </gBody>
-    <gFooter />
+    </GBody>
+    <GFooter />
   </div>
 );
 
-export default gPage;
+export default GPage;

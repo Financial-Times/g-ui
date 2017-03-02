@@ -11,7 +11,7 @@
 import { h } from 'preact';
 // import './main.scss';
 
-const gHeader = (props) => (
+const GHeader = (props) => (
   <div>
     <header className="o-header o-header--simple" data-o-component="o-header" data-o-header--no-js>
       <div className="o-header__row o-header__top">
@@ -384,4 +384,4 @@ const gHeader = (props) => (
   </div>
 );
 
-export default gHeader;
+export default GHeader;
