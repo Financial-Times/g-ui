@@ -10,7 +10,7 @@
 */
 
 import { h } from 'preact';
-import './main.scss';
+// import './main.scss';
 
 const GHeader = (props) => (
   <div className="g-header">
