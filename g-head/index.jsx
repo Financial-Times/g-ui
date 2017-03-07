@@ -5,7 +5,7 @@
 import defaults from '../defaults';
 import { h } from 'preact';
 
-const GPage = ({
+const GHead = ({
   stylesheetUrl,
   title,
   twitterHeadline,
