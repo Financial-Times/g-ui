@@ -33,6 +33,17 @@
       ]
     ]
   },
+  "eslintConfig": {
+    "extends": "airbnb",
+    "env": {
+      "browser": true
+    },
+    "settings": {
+      "react": {
+        "pragma": "h"
+      }
+    }
+  },
   "devDependencies": {
     "babel-core": "^6.23.1",
     "babel-plugin-transform-react-jsx": "^6.23.0"

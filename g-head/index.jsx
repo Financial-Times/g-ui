@@ -2,12 +2,14 @@
  * g-page: Graphics Page Container
  */
 
-import defaults from '../defaults';
+import Helmet from 'react-helmet';
 import { h } from 'preact';
 
-export default (config) => (
+import defaults from '../defaults';
+
+export default ({ config, origamiCSS, origamiJS }) => (
   <Helmet
-    htmlAttributes={{lang: "en", amp: undefined}} // amp takes no value
+    htmlAttributes={{lang: 'en', amp: undefined}} // amp takes no value
     title={config['page title']}
     titleTemplate="%s—FT.com"
     defaultTitle="Interactive Graphics project"
@@ -52,7 +54,7 @@ export default (config) => (
       {rel:'preconnect', 'href': 'https://cdn.polyfill.io'},
       {rel: 'stylesheet', href: `//www.ft.com/__origami/service/build/v2/bundles/css?modules=${origamiCSS.join(',')}`},
       {rel: 'publisher', href: 'https://plus.google.com/113457471429583444041/'},
-      (config['flags:analytics'] ? {rel='preconnect', href: 'https://spoor-api.ft.com'} : undefined),
+      (config['flags:analytics'] ? {rel: 'preconnect', href: 'https://spoor-api.ft.com'} : undefined),
       ].filter(i => i)}
     script={[
         // {src: "http://include.com/pathtojs.js", type: "text/javascript"},
@@ -66,3 +68,5 @@ export default (config) => (
     ]}
     onChangeClientState={(newState) => console.log(newState)}
   />);
+
+export { Helmet };
