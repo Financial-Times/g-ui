@@ -17,7 +17,7 @@ const GPage = ({ children, config, origamiCSS, origamiJS }) => (
       {children}
     </GContent>
     <GFooter />
-    <script src={`//origami-build.ft.com/v2/bundles/js?modules=${origamiJS.join(',')}`}></script>
+    <script src={`//origami-build.ft.com/v2/bundles/js?modules=${origamiJS.join(',')}`} />
   </body>
 );
 

@@ -42,10 +42,18 @@
       "react": {
         "pragma": "h"
       }
-    }
+    },
+    "rules": [
+      [0, "react/prop-types"]
+    ]
   },
   "devDependencies": {
     "babel-core": "^6.23.1",
-    "babel-plugin-transform-react-jsx": "^6.23.0"
+    "babel-plugin-transform-react-jsx": "^6.23.0",
+    "eslint": "^3.17.1",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.0"
   }
 }

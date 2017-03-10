@@ -2,7 +2,7 @@
  * This basically just exports everything.
  */
 
-export { default as gPage } from './g-page';
-export { default as gHeader } from './g-header';
-export { default as gFooter } from './g-footer';
-export { default as gBody } from './g-body';
+export { default as GPage } from './g-page';
+export { default as GHeader } from './g-header';
+export { default as GFooter } from './g-footer';
+export { default as GBody } from './g-content';
