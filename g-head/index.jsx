@@ -2,12 +2,12 @@
  * g-page: Graphics Page Container
  */
 
-import Helmet from 'react-helmet';
+import Helmet from 'preact-helmet';
 import { h } from 'preact';
 
 import defaults from '../defaults';
 
-export default ({ config, origamiCSS, origamiJS }) => (
+export default ({ config }) => (
   <Helmet
     htmlAttributes={{lang: 'en', amp: undefined}} // amp takes no value
     title={config['page title']}
@@ -52,7 +52,7 @@ export default ({ config, origamiCSS, origamiJS }) => (
       {rel: 'preconnect', 'href': 'https://origami-build.ft.com'},
       {rel: 'preconnect', 'href': 'https://build.origami.ft.com', crossOrigin: undefined},
       {rel:'preconnect', 'href': 'https://cdn.polyfill.io'},
-      {rel: 'stylesheet', href: `//www.ft.com/__origami/service/build/v2/bundles/css?modules=${origamiCSS.join(',')}`},
+      {rel: 'stylesheet', href: `//www.ft.com/__origami/service/build/v2/bundles/css?modules=${config.origami.css.join(',')}`},
       {rel: 'publisher', href: 'https://plus.google.com/113457471429583444041/'},
       (config['flags:analytics'] ? {rel: 'preconnect', href: 'https://spoor-api.ft.com'} : undefined),
       ].filter(i => i)}

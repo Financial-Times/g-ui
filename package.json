@@ -20,8 +20,7 @@
   "dependencies": {
     "preact": "^7.2.0",
     "preact-compat": "^3.13.1",
-    "react-helmet": "^4.0.0",
-    "styled-components": "^1.4.3"
+    "preact-helmet": "^4.0.0-alpha-2"
   },
   "babel": {
     "plugins": [
@@ -44,7 +43,10 @@
       }
     },
     "rules": [
-      [0, "react/prop-types"]
+      [
+        0,
+        "react/prop-types"
+      ]
     ]
   },
   "devDependencies": {
