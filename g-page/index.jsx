@@ -9,9 +9,6 @@ import GHeader from '../g-header';
 import GFooter from '../g-footer';
 import GContent from '../g-content';
 
-// import './top.scss';
-// import './index.scss';
-
 const GPage = ({ children, config, origamiCSS, origamiJS }) => (
   <main id="g-ui" className="g-page">
     <GHead config={config} origamiCSS={origamiCSS} />
