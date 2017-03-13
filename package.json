@@ -23,6 +23,20 @@
     "preact-helmet": "^4.0.0-alpha-2"
   },
   "babel": {
+    "presets": [
+      "react",
+      [
+        "env",
+        {
+          "targets": {
+            "browsers": [
+              "last 2 versions",
+              "safari >= 7"
+            ]
+          }
+        }
+      ]
+    ],
     "plugins": [
       [
         "transform-react-jsx",
@@ -52,6 +66,8 @@
   "devDependencies": {
     "babel-core": "^6.23.1",
     "babel-plugin-transform-react-jsx": "^6.23.0",
+    "babel-preset-env": "^1.2.1",
+    "babel-preset-react": "^6.23.0",
     "eslint": "^3.17.1",
     "eslint-config-airbnb": "^14.1.0",
     "eslint-plugin-import": "^2.2.0",
